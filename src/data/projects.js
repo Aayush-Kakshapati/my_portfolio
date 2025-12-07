@@ -5,7 +5,7 @@ const projects = [
     subtitle: "React • Express • MongoDB",
     description:
       "A fully functional e-commerce platform featuring JWT authentication, secure API endpoints, and complete CRUD operations for products, orders, and inventory. Includes a responsive UI and full-stack data handling.",
-    link: "",
+    link: "https://github.com/Aayush-Kakshapati/Brand.git",
     preview: "#",
     tags: ["React", "Express", "MongoDB", "JWT", "Full-Stack"],
   },
@@ -15,7 +15,7 @@ const projects = [
     subtitle: "React • Routing • UI",
     description:
       "A photography-focused blog platform built with React, featuring clean content layouts, intuitive routing, and optimized image display components.",
-    link: "",
+    link: "https://shusangrg.netlify.app/",
     preview: "#",
     tags: ["React", "UI", "Blog"],
   },
@@ -25,7 +25,7 @@ const projects = [
     subtitle: "JavaScript • Discord API",
     description:
       "A custom Discord bot capable of automated messaging and event management, built using JavaScript and Discord’s API for server interactions and commands.",
-    link: "",
+    link: "https://github.com/Aayush-Kakshapati/Discordbot.git",
     preview: "#",
     tags: ["JavaScript", "Discord API", "Bot"],
   },
