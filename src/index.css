@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+
+/* Small custom styles */
+:root {
+  --bg: #ffffff;
+  --muted: #6b7280;
+}
+
+/* smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+div, span{
+  cursor: default;
+}
+
+/* reduce motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto;
+  }
+}
