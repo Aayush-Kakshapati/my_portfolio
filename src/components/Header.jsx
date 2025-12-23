@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import useActiveSection from "../hooks/useActiveSection";
-import { ReactComponent as DarkIcon } from "../assets/logo-dark.svg";
-import { ReactComponent as LightIcon } from "../assets/logo-light.svg";
+import dark from "../assets/logo-dark.svg";
+import light from "../assets/logo-light.svg";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,9 +64,9 @@ export default function Header() {
             className="text-xs border px-2 py-1 rounded focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-current"
           >
             {theme === "dark" ? (
-              <DarkIcon />
+              <img src={dark} alt="Dark" />
             ) : (
-              <LightIcon className="bg-black" />
+              <img src={light} alt="Light" />
             )}
           </button>
 
