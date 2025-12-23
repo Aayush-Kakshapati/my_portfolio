@@ -1,33 +1,25 @@
-import { motion } from "framer-motion";
-
 export default function ProjectCard({ project }) {
   return (
-    <motion.a
+    <a
       href={project.link}
       target="_blank"
       rel="noreferrer"
-      initial={{ opacity: 0, y: 6 }}
-      whileHover={{ y: -6 }}
-      whileTap={{ scale: 0.995 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.35 }}
-      className="block p-5 rounded-lg bg-white dark:bg-gray-900 shadow hover:shadow-lg"
+      className="card block p-4 border rounded-xl hover:shadow-md transition"
     >
-      <h3 className="font-semibold text-lg">{project.title}</h3>
-      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-        {project.subtitle}
-      </p>
-      <p className="mt-3 text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-        {project.description}
-      </p>
+      <div className="flex justify-between items-start">
+        <h3 className="text-sm font-medium">{project.title}</h3>
+        <span className="text-xs text-[var(--muted)]">{project.type}</span>
+      </div>
 
-      <div className="mt-4 flex flex-wrap gap-2">
-        {project.tags?.map((t) => (
-          <span key={t} className="text-xs px-2 py-1 border rounded">
+      <p className="mt-2 text-sm text-[var(--muted)]">{project.description}</p>
+
+      <div className="mt-3 flex flex-wrap gap-2">
+        {project.tags.map((t) => (
+          <span key={t} className="text-xs border px-2 py-0.5 rounded-full">
             {t}
           </span>
         ))}
       </div>
-    </motion.a>
+    </a>
   );
 }

@@ -5,3 +5,13 @@
   text-align: center;
 }
 
+.main-body{
+  background-color: #232323;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

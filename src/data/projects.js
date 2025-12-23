@@ -1,33 +1,39 @@
 const projects = [
   {
-    id: "p1",
-    title: "Brand — Full-Stack Clothing Store",
-    subtitle: "React • Express • MongoDB",
-    description:
-      "A fully functional e-commerce platform featuring JWT authentication, secure API endpoints, and complete CRUD operations for products, orders, and inventory. Includes a responsive UI and full-stack data handling.",
-    link: "https://github.com/Aayush-Kakshapati/Brand.git",
-    preview: "#",
-    tags: ["React", "Express", "MongoDB", "JWT", "Full-Stack"],
-  },
-  {
-    id: "p2",
+    type: "Freelance",
     title: "Photographer’s Journal — Blogging Platform",
-    subtitle: "React • Routing • UI",
+    year: 2025,
     description:
-      "A photography-focused blog platform built with React, featuring clean content layouts, intuitive routing, and optimized image display components.",
+      "A photography blog website built with React.js featuring image galleries and user-friendly layouts.",
+    tags: ["React", "Frontend", "Routing"],
     link: "https://shusangrg.netlify.app/",
-    preview: "#",
-    tags: ["React", "UI", "Blog"],
   },
   {
-    id: "p3",
-    title: "Custom Discord Bot",
-    subtitle: "JavaScript • Discord API",
+    type: "Project",
+    title: "Brand — Full-Stack Clothing Store",
+    year: 2025,
     description:
-      "A custom Discord bot capable of automated messaging and event management, built using JavaScript and Discord’s API for server interactions and commands.",
+      "An e-commerce platform with JWT authentication, CRUD operations, and responsive UI built with React, Express, and MongoDB.",
+    tags: ["React", "Express", "MongoDB", "JWT", "Frontend", "Backend"],
+    link: "https://github.com/Aayush-Kakshapati/Brand.git",
+  },
+  {
+    type: "Project",
+    title: "Discord Bot",
+    year: 2025,
+    description:
+      "A custom Discord bot that automates messaging and manages events using Discord’s API.",
+    tags: ["JavaScript", "Bot", "API"],
     link: "https://github.com/Aayush-Kakshapati/Discordbot.git",
-    preview: "#",
-    tags: ["JavaScript", "Discord API", "Bot"],
+  },
+  {
+    type: "Academics",
+    title: "Sports World Online Platform",
+    year: 2025,
+    description:
+      "A sports platform with admin authentication, full CRUD, and responsive interface built using Jakarta EE, JSF, and MySQL.",
+    tags: ["Java", "Jakarta EE", "JSF", "MySQL", "Frontend", "Backend"],
+    link: "https://github.com/Aayush-Kakshapati/Sports-Website.git",
   },
 ];
 

@@ -1,17 +1,19 @@
 import projects from "../data/projects";
 import ProjectCard from "./ProjectCard";
+import useReveal from "../hooks/useReveal";
 
 export default function Projects() {
-  return (
-    <section id="projects" className="py-12 scroll-mt-12">
-      <h2 className="text-2xl font-bold">Selected Projects</h2>
-      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 max-w-2xl">
-        A curated list of work that demonstrates problem solving, front-end
-        fundamentals, and user-focused UI. Click any project to view code or a
-        live demo.
-      </p>
+  const ref = useReveal();
 
-      <div className="mt-6 grid gap-4 md:grid-cols-2">
+  return (
+    <section
+      id="projects"
+      ref={ref}
+      className="reveal max-w-6xl mx-auto px-6 scroll-mt-32"
+    >
+      <h2 className="section-title">Projects</h2>
+
+      <div className="grid gap-6 md:grid-cols-2">
         {projects.map((p) => (
           <ProjectCard key={p.id} project={p} />
         ))}

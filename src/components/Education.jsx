@@ -1,30 +1,36 @@
+import useReveal from "../hooks/useReveal";
+
 const education = [
   {
-    id: 1,
-    title: "Bachelors of Computer Application",
-    subtitle: "Tribhuvan University • 2022–2026",
+    degree: "Bachelor of Computer Application",
+    school: "Tribhuvan University",
+    period: "2022 – 2026",
   },
   {
-    id: 2,
-    title: "Computer",
-    subtitle: "Khwopa Higher Secondary School • 2021-2022",
+    degree: "Higher Secondary Education (Computer)",
+    school: "Khwopa Higher Secondary School",
+    period: "2021 – 2022",
   },
 ];
 
 export default function Education() {
+  const ref = useReveal();
+
   return (
-    <section id="education" className="py-12 scroll-mt-12">
-      <h2 className="text-2xl font-bold">Education</h2>
-      <div className="mt-6 grid md:grid-cols-2 gap-4">
+    <section id="education" ref={ref} className="reveal max-w-6xl mx-auto px-6">
+      <h2 className="section-title">Education</h2>
+
+      <div className="mt-10 space-y-6">
         {education.map((e) => (
           <div
-            key={e.id}
-            className="p-4 rounded-lg bg-white dark:bg-gray-900 shadow"
+            key={e.degree}
+            className="bg-[var(--bg-soft)] border border-[var(--border)] rounded-xl p-6"
           >
-            <div className="font-semibold">{e.title}</div>
-            <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-              {e.subtitle}
+            <div className="flex justify-between text-sm uppercase tracking-wider">
+              <span>{e.degree}</span>
+              <span className="text-[var(--muted)]">{e.period}</span>
             </div>
+            <p className="mt-2 text-[var(--muted)]">{e.school}</p>
           </div>
         ))}
       </div>

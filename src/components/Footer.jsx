@@ -1,7 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="py-12 scroll-mt-12 text-center text-sm text-gray-500">
-      © {new Date().getFullYear()} Aayush • Built with React & Tailwind
+    <footer className="border-t border-[var(--border)] py-8 mt-24">
+      <p className="text-center text-xs text-[var(--muted)] tracking-widest">
+        © 2025 Aayush — Frontend Developer
+      </p>
     </footer>
   );
 }
