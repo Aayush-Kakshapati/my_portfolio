@@ -35,8 +35,8 @@ export default function Header() {
   };
 
   const links = [
-    { name: "projects", path: "/projects" },
-    { name: "experience", path: "/experience" },
+    // { name: "projects", path: "/projects" },
+    // { name: "experience", path: "/experience" },
   ];
 
   return (
@@ -54,7 +54,6 @@ export default function Header() {
         <nav className="hidden md:flex gap-6 text-xs tracking-widest">
           {links.map((l) => (
             <Link
-              target="_blank"
               rel="noreferrer"
               key={l.name}
               to={l.path}
@@ -81,7 +80,7 @@ export default function Header() {
           </button>
 
           {/* Mobile Menu Button */}
-          <button
+          {/* <button
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
             aria-label="Toggle menu"
@@ -93,7 +92,7 @@ export default function Header() {
                        focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-current"
           >
             {isOpen ? "CLOSE" : "MENU"}
-          </button>
+          </button> */}
         </div>
 
         {/* Mobile Menu */}
@@ -110,7 +109,6 @@ export default function Header() {
           <nav className="flex flex-col px-6 py-6 gap-4 text-xs tracking-widest">
             {links.map((l) => (
               <Link
-                target="_blank"
                 rel="noreferrer"
                 key={l.name}
                 to={l.path}
