@@ -1,5 +1,6 @@
 const projects = [
   {
+    id: "1",
     type: "Freelance",
     title: "Photographer’s Journal — Blogging Platform",
     year: 2025,
@@ -9,6 +10,7 @@ const projects = [
     link: "https://shusangrg.netlify.app/",
   },
   {
+    id: "2",
     type: "Project",
     title: "Brand — Full-Stack Clothing Store",
     year: 2025,
@@ -18,6 +20,7 @@ const projects = [
     link: "https://github.com/Aayush-Kakshapati/Brand.git",
   },
   {
+    id: "3",
     type: "Project",
     title: "Discord Bot",
     year: 2025,
@@ -27,6 +30,7 @@ const projects = [
     link: "https://github.com/Aayush-Kakshapati/Discordbot.git",
   },
   {
+    id: "4",
     type: "Academics",
     title: "Sports World Online Platform",
     year: 2025,

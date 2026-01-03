@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
-import useActiveSection from "../hooks/useActiveSection";
-import dark from "../assets/logo-dark.svg";
-import light from "../assets/logo-light.svg";
+import { Link, useLocation } from "react-router-dom";
+import SunIcon from "../../assets/SunIcon";
+import MoonIcon from "../../assets/MoonIcon";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [theme, setTheme] = useState(
     () => localStorage.getItem("theme") || "system"
   );
+
+  const location = useLocation();
 
   useEffect(() => {
     const root = document.documentElement;
@@ -32,44 +34,53 @@ export default function Header() {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
-  const links = ["projects", "skills", "experience"];
-  const active = useActiveSection(links);
+  const links = [
+    { name: "projects", path: "/projects" },
+    { name: "experience", path: "/experience" },
+  ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--bg-color)]/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-(--border) bg-(--bg-color)/80 backdrop-blur">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between relative">
-        {/* Logo */}
-        <span className="text-sm font-semibold tracking-wide">AAYUSH</span>
+        <Link
+          to="/"
+          className="text-sm font-semibold tracking-wide"
+          onClick={() => setIsOpen(false)}
+        >
+          AAYUSH
+        </Link>
 
         {/* Desktop Nav */}
-        <nav
-          className={`hidden md:flex gap-6 text-xs tracking-widest hover:underline underline-offset-4 ${
-            active === 1 ? "underline" : ""
-          }`}
-        >
+        <nav className="hidden md:flex gap-6 text-xs tracking-widest">
           {links.map((l) => (
-            <a
-              key={l}
-              href={`#${l}`}
-              className="hover:underline underline-offset-4"
+            <Link
+              target="_blank"
+              rel="noreferrer"
+              key={l.name}
+              to={l.path}
+              className={`underline-offset-4 hover:underline ${
+                location.pathname === l.path ? "underline" : ""
+              }`}
             >
-              {l.toUpperCase()}
-            </a>
+              {l.name.toUpperCase()}
+            </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-4">
+          {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
             className="text-xs border px-2 py-1 rounded focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-current"
           >
             {theme === "dark" ? (
-              <img src={dark} alt="Dark" />
+              <SunIcon className="w-4 h-4 text-current" />
             ) : (
-              <img src={light} alt="Light" />
+              <MoonIcon className="w-4 h-4 text-current" />
             )}
           </button>
 
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             aria-expanded={isOpen}
@@ -88,10 +99,8 @@ export default function Header() {
         {/* Mobile Menu */}
         <div
           className={`md:hidden absolute left-0 right-0 top-full
-          bg-[var(--bg-color)] border-b border-[var(--border)]
-          transition-all duration-200 hover:underline underline-offset-4 ${
-            active === 1 ? "underline" : ""
-          }
+          bg-(--bg-color) border-b border-(--border)
+          transition-all duration-200
           ${
             isOpen
               ? "opacity-100 translate-y-0"
@@ -100,14 +109,17 @@ export default function Header() {
         >
           <nav className="flex flex-col px-6 py-6 gap-4 text-xs tracking-widest">
             {links.map((l) => (
-              <a
-                key={l}
-                href={`#${l}`}
-                onClick={() => setIsOpen(false)}
-                className="hover:underline underline-offset-4"
+              <Link
+                target="_blank"
+                rel="noreferrer"
+                key={l.name}
+                to={l.path}
+                className={`underline-offset-4 hover:underline ${
+                  location.pathname === l.path ? "underline" : ""
+                }`}
               >
-                {l.toUpperCase()}
-              </a>
+                {l.name.toUpperCase()}
+              </Link>
             ))}
           </nav>
         </div>
